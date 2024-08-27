@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="number"], select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Approval Prediction</h1>
+        <form action="/predictdata" method="post">
+            <label for="no_of_dependents">Number of Dependents:</label>
+            <input type="number" id="no_of_dependents" name="no_of_dependents" required><br>
+            <label for="education">Education Level:</label>
+            <select id="education" name="education" required>
+                <option value="1">Graduate</option>
+                <option value="0">Not Graduate</option>
+            </select><br>
+            <label for="self_employed">Self Employed:</label>
+            <select id="self_employed" name="self_employed" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+            <label for="income_annum">Annual Income:</label>
+            <input type="number" id="income_annum" name="income_annum" required><br>
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" id="loan_amount" name="loan_amount" required><br>
+            <label for="loan_term">Loan Term (in months):</label>
+            <input type="number" id="loan_term" name="loan_term" required><br>
+            <label for="cibil_score">CIBIL Score:</label>
+            <input type="number" id="cibil_score" name="cibil_score" required><br>
+            <label for="residential_assets_value">Residential Assets Value:</label>
+            <input type="number" id="residential_assets_value" name="residential_assets_value" required><br>
+            <label for="commercial_assets_value">Commercial Assets Value:</label>
+            <input type="number" id="commercial_assets_value" name="commercial_assets_value" required><br>
+            <label for="luxury_assets_value">Luxury Assets Value:</label>
+            <input type="number" id="luxury_assets_value" name="luxury_assets_value" required><br>
+            <label for="bank_asset_value">Bank Asset Value:</label>
+            <input type="number" id="bank_asset_value" name="bank_asset_value" required><br>
+            <button type="submit">Predict Loan Status</button>
+        </form>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+</head>
+<body>
+    <h1>Loan Approval Prediction</h1>
+    <form action="/predictdata" method="post">
+        <label for="no_of_dependents">Number of Dependents:</label>
+        <input type="number" id="no_of_dependents" name="no_of_dependents" required><br>
+
+        <label for="education">Education (1 for Graduate, 0 for Not Graduate):</label>
+        <input type="number" id="education" name="education" required><br>
+
+        <label for="self_employed">Self Employed (1 for Yes, 0 for No):</label>
+        <input type="number" id="self_employed" name="self_employed" required><br>
+
+        <label for="income_annum">Annual Income:</label>
+        <input type="number" id="income_annum" name="income_annum" required><br>
+
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" id="loan_amount" name="loan_amount" required><br>
+
+        <label for="loan_term">Loan Term (in months):</label>
+        <input type="number" id="loan_term" name="loan_term" required><br>
+
+        <label for="cibil_score">CIBIL Score:</label>
+        <input type="number" id="cibil_score" name="cibil_score" required><br>
+
+        <label for="residential_assets_value">Residential Assets Value:</label>
+        <input type="number" id="residential_assets_value" name="residential_assets_value" required><br>
+
+        <label for="commercial_assets_value">Commercial Assets Value:</label>
+        <input type="number" id="commercial_assets_value" name="commercial_assets_value" required><br>
+
+        <label for="luxury_assets_value">Luxury Assets Value:</label>
+        <input type="number" id="luxury_assets_value" name="luxury_assets_value" required><br>
+
+        <label for="bank_asset_value">Bank Asset Value:</label>
+        <input type="number" id="bank_asset_value" name="bank_asset_value" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body> 
+
+
+
+

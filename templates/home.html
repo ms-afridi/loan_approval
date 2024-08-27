@@ -1,0 +1,293 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+</head>
+<body>
+    <h1>Loan Approval Prediction</h1>
+    <form action="/predictdata" method="post">
+        <label for="no_of_dependents">Number of Dependents:</label>
+        <input type="number" id="no_of_dependents" name="no_of_dependents" required><br>
+
+        <label for="education">Education Level:</label>
+        <select id="education" name="education" required>
+            <option value="1">Graduate</option>
+            <option value="0">Not Graduate</option>
+        </select><br>
+
+        <label for="self_employed">Self Employed:</label>
+        <select id="self_employed" name="self_employed" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <label for="income_annum">Annual Income:</label>
+        <input type="number" id="income_annum" name="income_annum" required><br>
+
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" id="loan_amount" name="loan_amount" required><br>
+
+        <label for="loan_term">Loan Term (in months):</label>
+        <input type="number" id="loan_term" name="loan_term" required><br>
+
+        <label for="cibil_score">CIBIL Score:</label>
+        <input type="number" id="cibil_score" name="cibil_score" required><br>
+
+        <label for="residential_assets_value">Residential Assets Value:</label>
+        <input type="number" id="residential_assets_value" name="residential_assets_value" required><br>
+
+        <label for="commercial_assets_value">Commercial Assets Value:</label>
+        <input type="number" id="commercial_assets_value" name="commercial_assets_value" required><br>
+
+        <label for="luxury_assets_value">Luxury Assets Value:</label>
+        <input type="number" id="luxury_assets_value" name="luxury_assets_value" required><br>
+
+        <label for="bank_asset_value">Bank Asset Value:</label>
+        <input type="number" id="bank_asset_value" name="bank_asset_value" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Front Page</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, form, label, input, select {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: #e32626;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('dynamic-bg.jpg') no-repeat center center/cover;
+            opacity: 0.6;
+            z-index: -1;
+            transition: opacity 0.3s;
+        }
+
+        .cta-button:hover::before {
+            opacity: 0.8;
+        }
+
+        .form-container {
+            padding: 40px 0;
+            background-color: #ecf0f1;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Reserve Bank of India</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Reserve Bank of India</h2>
+            <p>Your trusted partner in financial growth.</p>
+            <a href="#services" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <section class="form-container">
+        <div class="container">
+            <h2>Loan Approval Prediction</h2>
+            <form action="/predictdata" method="post">
+                <label for="no_of_dependents">Number of Dependents:</label>
+                <input type="number" id="no_of_dependents" name="no_of_dependents" required><br>
+
+                <label for="education">Education Level:</label>
+                <select id="education" name="education" required>
+                    <option value="1">Graduate</option>
+                    <option value="0">Not Graduate</option>
+                </select><br>
+
+                <label for="self_employed">Self Employed:</label>
+                <select id="self_employed" name="self_employed" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+
+                <label for="income_annum">Annual Income:</label>
+                <input type="number" id="income_annum" name="income_annum" required><br>
+
+                <label for="loan_amount">Loan Amount:</label>
+                <input type="number" id="loan_amount" name="loan_amount" required><br>
+
+                <label for="loan_term">Loan Term (in months):</label>
+                <input type="number" id="loan_term" name="loan_term" required><br>
+
+                <label for="cibil_score">CIBIL Score:</label>
+                <input type="number" id="cibil_score" name="cibil_score" required><br>
+
+                <label for="residential_assets_value">Residential Assets Value:</label>
+                <input type="number" id="residential_assets_value" name="residential_assets_value" required><br>
+
+                <label for="commercial_assets_value">Commercial Assets Value:</label>
+                <input type="number" id="commercial_assets_value" name="commercial_assets_value" required><br>
+
+                <label for="luxury_assets_value">Luxury Assets Value:</label>
+                <input type="number" id="luxury_assets_value" name="luxury_assets_value" required><br>
+
+                <label for="bank_asset_value">Bank Asset Value:</label>
+                <input type="number" id="bank_asset_value" name="bank_asset_value" required><br>
+
+                <input type="submit" value="Predict">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Reserve Bank of India. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
